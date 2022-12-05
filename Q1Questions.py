@@ -8,6 +8,9 @@ if correctAnswer != 'A' and correctAnswer != 'B' and correctAnswer != 'C' and co
   exit("Invalid correct answer, must be A, B, C, or D")
 
 fileName = input("\nWhat would you like the file to be named?\n")
+if fileName.endswith('.txt'):
+  fileName = fileName[0:len(fileName)-4]
+  print(fileName)
 filehandle = open("questions/" + fileName + ".txt",'w')
 filehandle.write(question + answerA + answerB + answerC + answerD + correctAnswer)
 filehandle.close()
